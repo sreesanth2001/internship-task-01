@@ -1,0 +1,57 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Base (mobile) */
+body {
+  font-size: 16px;
+}
+.header, .nav, .content, .sidebar, .footer {
+  width: 100%;
+}
+
+/* Tablet and up (min-width: 600px) */
+@media (min-width: 600px) {
+  .content { max-width: 720px; margin: auto; }
+  body { font-size: 18px; }
+}
+
+/* Desktop (min-width: 992px) */
+@media (min-width: 992px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+  }
+  body { font-size: 20px; }
+}
+
+
+@media (orientation: landscape) {
+  .hero { height: 60vh; }
+}
+
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #111;
+    color: #eee;
+  }
+}
+
+
+html { font-size: 100%; } /* 16px */
+body { font-size: 1rem; }
+
+@media (min-width: 1200px) {
+  html { font-size: 112.5%; } /* 18px base */
+}
+
+

@@ -1,0 +1,38 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Base layout */
+    .wrapper { display: block; padding: 1rem; }
+    img { max-width: 100%; height: auto; }
+    body { font-size: 1rem; line-height: 1.6; }
+
+    /* Tablet */
+    @media (min-width: 600px) {
+      .wrapper { max-width: 720px; margin: auto; }
+      body { font-size: 1.125rem; }
+    }
+
+    /* Desktop grid */
+    @media (min-width: 992px) {
+      .wrapper {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 1rem;
+      }
+      body { font-size: 1.25rem; }
+    }
+
+    /* Landscape adjustments */
+    @media (orientation: landscape) {
+      .hero { height: 60vh; }
+    }
+
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+      body { background: #121212; color: #ddd; }
+    }
+  </style>
+</head>
