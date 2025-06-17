@@ -1,0 +1,11 @@
+.error {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 4px;
+}
+.field {
+  margin-bottom: 1em;
+}
+input.error, textarea.error {
+  border-color: red;
+}
