@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fetch API Example</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .user-card {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>User List</h1>
+  <div id="user-list">Loading users...</div>
+
+  <script>
+    // Function to fetch and display user data
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json(); // Parse JSON data
+      })
+      .then(users => {
+        const userList = document.getElementById('user-list');
+        userList.innerHTML = ''; // Clear loading text
+
+        users.forEach(user => {
+          const userCard = document.createElement('div');
+          userCard.className = 'user-card';
+          userCard.innerHTML = `
+            <h3>${user.name}</h3>
+            <p><strong>Email:</strong> ${user.email}</p>
+            <p><strong>Phone:</strong> ${user.phone}</p>
+            <p><strong>Website:</strong> <a href="http://${user.website}" target="_blank">${user.website}</a></p>
+          `;
+          userList.appendChild(userCard);
+        });
+      })
+      .catch(error => {
+        document.getElementById('user-list').textContent = 'Failed to load users.';
+        console.error('There was a problem with the fetch operation:', error);
+      });
+  </script>
+
+</body>
+</html>
